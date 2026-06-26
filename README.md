@@ -68,7 +68,7 @@ cp .env.example .env
 
 | Variable            | Default            | Description                                                                                                                                                                                                                       |
 | ------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PORT`              | `3000`             | API port (host + container).                                                                                                                                                                                                      |
+| `PORT`              | `8080`             | API port (host + container).                                                                                                                                                                                                      |
 | `NODE_ENV`          | `development`      | `development` / `production` / `test`.                                                                                                                                                                                            |
 | `DB_HOST`           | `postgres`         | **Keep `postgres` for the full-Docker path** (compose service name). **Set to `localhost`** for the local-without-Docker path. (The backend container also force-overrides this to `postgres` so it always works inside compose.) |
 | `DB_PORT`           | `5432`             | PostgreSQL port.                                                                                                                                                                                                                  |
@@ -88,8 +88,8 @@ make migrate   # runs TypeORM migrations against the postgres container
 make seed      # loads sample Building A / B location tree
 ```
 
-- API: **http://localhost:3000**
-- Swagger docs: **http://localhost:3000/api/docs**
+- API: **http://localhost:8080**
+- Swagger docs: **http://localhost:8080/api/docs**
 
 > `make up` uses `docker-compose.override.yml` automatically, so the backend
 > runs in hot-reload (`start:dev`) mode with dev dependencies available — which
