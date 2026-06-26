@@ -1,6 +1,8 @@
 import "reflect-metadata";
 import { config as loadEnv } from "dotenv";
 import { DataSource, DataSourceOptions } from "typeorm";
+import { Booking } from "../../modules/bookings/entities/booking.entity";
+import { Location } from "../../modules/locations/entities/location.entity";
 
 process.env.TZ = "UTC";
 
@@ -13,6 +15,7 @@ export const dataSourceOptions: DataSourceOptions = {
   username: process.env.DB_USER ?? "testing",
   password: process.env.DB_PASSWORD ?? "testing_password",
   database: process.env.DB_NAME ?? "testing",
+  entities: [Location, Booking],
   migrations: [__dirname + "/migrations/*{.ts,.js}"],
   synchronize: false,
   logging:
