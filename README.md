@@ -214,15 +214,14 @@ time/day-of-week util.
 
 ## 12. Useful Makefile commands
 
-| Target          | What it does                                               |
-| --------------- | ---------------------------------------------------------- |
-| `make up`       | `docker compose up -d` (start postgres + backend).         |
-| `make down`     | `docker compose down` (stop & remove containers).          |
-| `make build`    | `docker compose build` (build/rebuild the backend image).  |
-| `make logs`     | `docker compose logs -f backend` (tail backend logs).      |
-| `make db-shell` | `psql` shell inside the postgres container.                |
-| `make migrate`  | Run TypeORM migrations inside the backend container.       |
-| `make seed`     | Load the sample Building A / B tree.                       |
-| `make test`     | Run Jest unit tests (on the host).                         |
-| `make restart`  | `down` then `up`.                                          |
-| `make clean`    | `docker compose down -v` (also wipes the Postgres volume). |
+| Target         | What it does                                               |
+| -------------- | ---------------------------------------------------------- |
+| `make up`      | `docker compose up -d` (start postgres + backend).         |
+| `make down`    | `docker compose down` (stop & remove containers).          |
+| `make build`   | `docker compose build` (build/rebuild the backend image).  |
+| `make logs`    | `docker compose logs -f backend` (tail backend logs).      |
+| `make migrate` | Run TypeORM migrations inside the backend container.       |
+| `make seed`    | Load the sample Building A / B tree.                       |
+| `make test`    | Run Jest unit tests (on the host).                         |
+| `make restart` | `down` then `up`.                                          |
+| `make clean`   | `docker compose down -v` (also wipes the Postgres volume). |
