@@ -1,0 +1,19 @@
+# Local development override (loaded automatically by `docker compose` on top of
+# docker-compose.yml). Builds the `development` stage, mounts the source for
+# hot-reload, and runs `npm run start:dev`. The base file stays production-like.
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      NODE_ENV: development
+    command: npm run start:dev
+    volumes:
+      - ./src:/app/src
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./tsconfig.build.json:/app/tsconfig.build.json
+      - ./nest-cli.json:/app/nest-cli.json
+      # Keep container node_modules (don't shadow with host).
+      - /app/node_modules
