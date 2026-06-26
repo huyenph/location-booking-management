@@ -14,9 +14,6 @@ build: ## Build (or rebuild) the backend image
 logs: ## Tail backend logs
 	$(COMPOSE) logs -f backend
 
-db-shell: ## Open a psql shell in the postgres container
-	$(COMPOSE) exec postgres psql -U $${DB_USER:-sjgroup} -d $${DB_NAME:-sjgroup}
-
 migrate: ## Run TypeORM migrations inside the backend container
 	$(COMPOSE) exec backend npm run migration:run
 
